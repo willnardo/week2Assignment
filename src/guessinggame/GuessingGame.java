@@ -19,6 +19,7 @@ public class GuessingGame {
         // TODO code application logic here
         Scanner s = new Scanner(System.in);
         int randomNumber = (int) (Math.random() * 100 + 1);
+        int counter = 1;
 
         System.out.print("I'm thinking of a number between 0-100.  What is the number? ");
         int userGuess = s.nextInt();
@@ -36,8 +37,10 @@ public class GuessingGame {
 
             }
             userGuess = s.nextInt();
+            counter++;
         }
 
         System.out.println("The number " + userGuess + " is correct!");
+        System.out.println("You got it in " + counter + " tries!");
     }
 }
