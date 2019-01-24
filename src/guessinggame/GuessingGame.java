@@ -25,14 +25,19 @@ public class GuessingGame {
 
         while (userGuess != randomNumber) {
 
-            System.out.print("The number " + userGuess + " is not correct."
-                    + "\nTry again: ");
+            if (userGuess < randomNumber) {
 
+                System.out.print("The number " + userGuess + " is to low."
+                        + "\nTry again: ");
+            } else {
+
+                System.out.print("The number " + userGuess + " is to high."
+                        + "\nTry again: ");
+
+            }
             userGuess = s.nextInt();
         }
 
         System.out.println("The number " + userGuess + " is correct!");
-
     }
-
 }
