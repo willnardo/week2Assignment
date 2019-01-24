@@ -18,17 +18,20 @@ public class GuessingGame {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner s = new Scanner(System.in);
-        int randomNumber = (int) (Math.random() * 20 + 1);
+        int randomNumber = (int) (Math.random() * 100 + 1);
 
-        System.out.print("I'm thinking of a number between 0-20.  What is the number? ");
+        System.out.print("I'm thinking of a number between 0-100.  What is the number? ");
         int userGuess = s.nextInt();
 
-        if (userGuess == randomNumber) {
-            System.out.println("The number " + userGuess + " is correct!");
-        } else {
-            System.out.println("The number " + userGuess + " is not correct."
-                    + "\nThe correct number is " + randomNumber + ".");
+        while (userGuess != randomNumber) {
+
+            System.out.print("The number " + userGuess + " is not correct."
+                    + "\nTry again: ");
+
+            userGuess = s.nextInt();
         }
+
+        System.out.println("The number " + userGuess + " is correct!");
 
     }
 
